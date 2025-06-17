@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yasir Portfolio website",
+  title: "Yasir Portfolio ",
   description: "Portfolio website created in nextjs ",
 };
 
