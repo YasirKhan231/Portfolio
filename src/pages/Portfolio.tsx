@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Twitter, Mail, FileText } from "lucide-react";
@@ -77,8 +79,82 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Simple 2D Cosmic Background */}
+      <div className="fixed inset-0 z-0">
+        {/* Stars */}
+        <div className="absolute inset-0">
+          {[...Array(200)].map((_, i) => (
+            <div
+              key={`star-${i}`}
+              className="absolute bg-white rounded-full animate-twinkle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                width: `${Math.random() * 3 + 1}px`,
+                height: `${Math.random() * 3 + 1}px`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${Math.random() * 2 + 2}s`,
+              }}
+            ></div>
+          ))}
+        </div>
+
+        {/* Fixed Moon - Top Right */}
+        <div className="absolute top-16 right-20 w-24 h-24">
+          <div className="relative w-full h-full">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-300 to-gray-500 rounded-full shadow-2xl">
+              {/* Moon craters */}
+              <div className="absolute top-3 left-4 w-2 h-2 bg-gray-600 rounded-full opacity-70"></div>
+              <div className="absolute bottom-4 right-3 w-1.5 h-1.5 bg-gray-700 rounded-full opacity-60"></div>
+              <div className="absolute top-8 right-6 w-1 h-1 bg-gray-600 rounded-full opacity-50"></div>
+              <div className="absolute bottom-7 left-7 w-1 h-1 bg-gray-700 rounded-full opacity-40"></div>
+              <div className="absolute top-6 left-6 w-1.5 h-1.5 bg-gray-600 rounded-full opacity-50"></div>
+              {/* Moon glow */}
+              <div className="absolute inset-0 bg-white rounded-full opacity-10 blur-sm scale-110"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Fixed Moon - Bottom Left */}
+        {/* <div className="absolute bottom-24 left-16 w-16 h-16">
+          <div className="relative w-full h-full">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-300 via-gray-400 to-gray-600 rounded-full shadow-xl">
+              <div className="absolute top-2 left-3 w-1 h-1 bg-gray-700 rounded-full opacity-60"></div>
+              <div className="absolute bottom-3 right-2 w-1.5 h-1.5 bg-gray-800 rounded-full opacity-50"></div>
+              <div className="absolute top-5 right-4 w-0.5 h-0.5 bg-gray-700 rounded-full opacity-40"></div>
+              <div className="absolute inset-0 bg-white rounded-full opacity-8 blur-sm scale-105"></div>
+            </div>
+          </div>        </div>   */}
+
+        {/* Fixed Moon - Center Left */}
+        {/* <div className="absolute top-1/2 left-8 w-12 h-12 transform -translate-y-1/2">
+          <div className="relative w-full h-full">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-350 to-gray-500 rounded-full shadow-lg">
+              <div className="absolute top-1.5 left-2 w-1 h-1 bg-gray-600 rounded-full opacity-60"></div>
+              <div className="absolute bottom-2 right-1.5 w-0.5 h-0.5 bg-gray-700 rounded-full opacity-50"></div>
+              <div className="absolute top-3 right-3 w-0.5 h-0.5 bg-gray-600 rounded-full opacity-40"></div>
+              <div className="absolute inset-0 bg-white rounded-full opacity-6 blur-sm scale-110"></div>
+            </div>
+          </div>
+        </div> */}
+
+        {/* Fixed Moon - Top Center */}
+        {/* <div className="absolute top-12 left-1/2 w-14 h-14 transform -translate-x-1/2">
+          <div className="relative w-full h-full">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-250 via-gray-400 to-gray-550 rounded-full shadow-lg">
+              <div className="absolute top-2 left-2.5 w-1 h-1 bg-gray-650 rounded-full opacity-65"></div>
+              <div className="absolute bottom-2.5 right-2 w-1 h-1 bg-gray-750 rounded-full opacity-55"></div>
+              <div className="absolute top-4 right-3.5 w-0.5 h-0.5 bg-gray-650 rounded-full opacity-45"></div>
+              <div className="absolute bottom-4 left-4 w-0.5 h-0.5 bg-gray-700 rounded-full opacity-35"></div>
+              <div className="absolute inset-0 bg-white rounded-full opacity-7 blur-sm scale-108"></div>
+            </div>
+          </div>
+        </div> */}
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
         <header className="flex justify-between items-center mb-12">
           <h1 className="text-2xl font-bold">Hi, I'm Yasir 👋</h1>
@@ -304,6 +380,22 @@ export default function Portfolio() {
           </div>
         </section>
       </div>
+
+      <style jsx>{`
+        @keyframes twinkle {
+          0%,
+          100% {
+            opacity: 0.3;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+
+        .animate-twinkle {
+          animation: twinkle 3s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
