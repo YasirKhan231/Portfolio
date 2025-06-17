@@ -116,6 +116,14 @@ export default function Portfolio() {
     },
     {
       id: 2,
+      company: "Upwork & Fiver",
+      role: "Freelancer",
+      timeline: "Mar 2025 - Present",
+      description:
+        "Developing the MVP for the founders  and the consumer website whihc help the users to get done their work .",
+    },
+    {
+      id: 3,
       company: "GirlScript summer of code ",
       role: "Contributer",
       timeline: "Oct 2024 - Nov 2024",
@@ -123,7 +131,7 @@ export default function Portfolio() {
         "Contributing to open source projects, fixing bugs, and implementing new features in JavaScript and TypeScript.",
     },
     {
-      id: 3,
+      id: 4,
       company: "The skill Guru Foundation",
       role: "Full stack developer",
       timeline: "Sep 2024 - Sep 2024",
