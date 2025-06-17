@@ -47,7 +47,6 @@ export default function Portfolio() {
       github: "https://github.com/YasirKhan231/LSAT-training-",
       live: "https://lsat-training.vercel.app/",
     },
-
     {
       id: 2,
       title: "SmartExpense",
@@ -86,24 +85,32 @@ export default function Portfolio() {
           <div className="flex items-center gap-4">
             <Link
               href="https://www.linkedin.com/in/yasir-khan-397989234/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
             >
               <Linkedin className="w-5 h-5" />
             </Link>
             <Link
               href="https://github.com/YasirKhan231"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
             >
               <Github className="w-5 h-5" />
             </Link>
             <Link
               href="https://x.com/yasir_juned"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
             >
               <Twitter className="w-5 h-5" />
             </Link>
             <Link
               href="https://drive.google.com/file/d/1roVvfO0GqokwXcAEL1N_tq1S1aSTVaHu/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
             >
               <FileText className="w-5 h-5" />
@@ -211,6 +218,8 @@ export default function Portfolio() {
                     <div className="flex items-center gap-4 text-sm">
                       <Link
                         href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-gray-400 hover:text-white transition-colors"
                       >
                         GitHub
@@ -218,11 +227,12 @@ export default function Portfolio() {
                       <span className="text-gray-600">|</span>
                       <Link
                         href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-gray-400 hover:text-white transition-colors"
                       >
                         Live
                       </Link>
-                      <span className="text-gray-600">|</span>
                     </div>
                   </div>
                 </div>
@@ -244,52 +254,52 @@ export default function Portfolio() {
               variant="outline"
               className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
             >
-              <a
+              <Link
                 href="https://x.com/yasir_juned"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Twitter className="w-4 h-4 mr-2" />
                 Twitter
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
             >
-              <a
+              <Link
                 href="https://www.linkedin.com/in/yasir-khan-397989234/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Linkedin className="w-4 h-4 mr-2" />
                 LinkedIn
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
             >
-              <a href="mailto:yasirkhan0184@gmail.com">
+              <Link href="mailto:yasirkhan0184@gmail.com">
                 <Mail className="w-4 h-4 mr-2" />
                 Email
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
             >
-              <a
+              <Link
                 href="https://github.com/YasirKhan231"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Github className="w-4 h-4 mr-2" />
                 GitHub
-              </a>
+              </Link>
             </Button>
           </div>
         </section>
