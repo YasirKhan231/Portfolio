@@ -1,12 +1,31 @@
 "use client";
 
+import type React from "react";
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Twitter, Mail, FileText } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  FileText,
+  GraduationCap,
+  Briefcase,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Portfolio() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+
   const skills = [
     "TailwindCSS",
     "Javascript",
@@ -78,6 +97,70 @@ export default function Portfolio() {
     },
   ];
 
+  const education = {
+    college: "Arya collage of engineering and technology",
+    degree: "Computer Science and Engineering",
+    duration: "2022 - 2026",
+    description:
+      "Bachelor's degree in Computer Science and Engineering with focus on software development, algorithms, and system design.",
+  };
+
+  const experiences = [
+    {
+      id: 1,
+      company: "Startup Bricks",
+      role: "Software Engineer Intern",
+      timeline: "Jan 2025 - Present",
+      description:
+        "Developed web applications using Nextjs ,React and Node.js, implemented REST APIs, and collaborated with cross-functional teams.",
+    },
+    {
+      id: 2,
+      company: "GirlScript summer of code ",
+      role: "Contributer",
+      timeline: "Oct 2024 - Nov 2024",
+      description:
+        "Contributing to open source projects, fixing bugs, and implementing new features in JavaScript and TypeScript.",
+    },
+    {
+      id: 3,
+      company: "The skill Guru Foundation",
+      role: "Full stack developer",
+      timeline: "Sep 2024 - Sep 2024",
+      description:
+        "Developed the web products for the foundation in differnt niches , Managging the whole team to make a full software .",
+    },
+  ];
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mgvyzwjq", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        form.reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Simple 2D Cosmic Background */}
@@ -115,42 +198,6 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-
-        {/* Fixed Moon - Bottom Left */}
-        {/* <div className="absolute bottom-24 left-16 w-16 h-16">
-          <div className="relative w-full h-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-300 via-gray-400 to-gray-600 rounded-full shadow-xl">
-              <div className="absolute top-2 left-3 w-1 h-1 bg-gray-700 rounded-full opacity-60"></div>
-              <div className="absolute bottom-3 right-2 w-1.5 h-1.5 bg-gray-800 rounded-full opacity-50"></div>
-              <div className="absolute top-5 right-4 w-0.5 h-0.5 bg-gray-700 rounded-full opacity-40"></div>
-              <div className="absolute inset-0 bg-white rounded-full opacity-8 blur-sm scale-105"></div>
-            </div>
-          </div>        </div>   */}
-
-        {/* Fixed Moon - Center Left */}
-        {/* <div className="absolute top-1/2 left-8 w-12 h-12 transform -translate-y-1/2">
-          <div className="relative w-full h-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-350 to-gray-500 rounded-full shadow-lg">
-              <div className="absolute top-1.5 left-2 w-1 h-1 bg-gray-600 rounded-full opacity-60"></div>
-              <div className="absolute bottom-2 right-1.5 w-0.5 h-0.5 bg-gray-700 rounded-full opacity-50"></div>
-              <div className="absolute top-3 right-3 w-0.5 h-0.5 bg-gray-600 rounded-full opacity-40"></div>
-              <div className="absolute inset-0 bg-white rounded-full opacity-6 blur-sm scale-110"></div>
-            </div>
-          </div>
-        </div> */}
-
-        {/* Fixed Moon - Top Center */}
-        {/* <div className="absolute top-12 left-1/2 w-14 h-14 transform -translate-x-1/2">
-          <div className="relative w-full h-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-250 via-gray-400 to-gray-550 rounded-full shadow-lg">
-              <div className="absolute top-2 left-2.5 w-1 h-1 bg-gray-650 rounded-full opacity-65"></div>
-              <div className="absolute bottom-2.5 right-2 w-1 h-1 bg-gray-750 rounded-full opacity-55"></div>
-              <div className="absolute top-4 right-3.5 w-0.5 h-0.5 bg-gray-650 rounded-full opacity-45"></div>
-              <div className="absolute bottom-4 left-4 w-0.5 h-0.5 bg-gray-700 rounded-full opacity-35"></div>
-              <div className="absolute inset-0 bg-white rounded-full opacity-7 blur-sm scale-108"></div>
-            </div>
-          </div>
-        </div> */}
       </div>
 
       {/* Content */}
@@ -226,13 +273,60 @@ export default function Portfolio() {
                 opportunity? Feel free to message me! I'm always excited to
                 connect and work on great projects.{" "}
                 <Link
-                  href="mailto:yasirkhan0184@gmail.com"
+                  href="#contact-form"
                   className="underline hover:text-white"
                 >
                   Contact me
                 </Link>
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Education */}
+        <section className="mb-12">
+          <div className="flex items-center gap-2 mb-6">
+            <GraduationCap className="w-5 h-5" />
+            <h2 className="text-xl font-semibold">Education</h2>
+          </div>
+          <div className="border-l-2 border-gray-700 pl-6 ml-2">
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold">{education.college}</h3>
+                <span className="text-gray-400 text-sm">
+                  {education.duration}
+                </span>
+              </div>
+              <p className="text-gray-300">{education.degree}</p>
+              <p className="text-gray-400 text-sm">{education.description}</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Experience */}
+        <section className="mb-12">
+          <div className="flex items-center gap-2 mb-6">
+            <Briefcase className="w-5 h-5" />
+            <h2 className="text-xl font-semibold">Experience</h2>
+          </div>
+          <div className="space-y-8">
+            {experiences.map((exp) => (
+              <div
+                key={exp.id}
+                className="border-l-2 border-gray-700 pl-6 ml-2"
+              >
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold">{exp.company}</h3>
+                    <span className="text-gray-400 text-sm">
+                      {exp.timeline}
+                    </span>
+                  </div>
+                  <p className="text-gray-300 font-medium">{exp.role}</p>
+                  <p className="text-gray-400 text-sm">{exp.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -317,66 +411,147 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Contact */}
-        <section id="contact">
-          <h2 className="text-xl font-semibold mb-6">Reach out to me.</h2>
-          <p className="text-gray-300 mb-6">
-            Feel free to reach out to me via email, LinkedIn, or Twitter for any
-            queries, collaboration opportunities, or further details.
-          </p>
-          <div className="flex gap-4">
-            <Button
-              asChild
-              variant="outline"
-              className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
-            >
-              <Link
-                href="https://x.com/yasir_juned"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter className="w-4 h-4 mr-2" />
-                Twitter
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
-            >
-              <Link
-                href="https://www.linkedin.com/in/yasir-khan-397989234/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin className="w-4 h-4 mr-2" />
-                LinkedIn
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
-            >
-              <Link href="mailto:yasirkhan0184@gmail.com">
-                <Mail className="w-4 h-4 mr-2" />
-                Email
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
-            >
-              <Link
-                href="https://github.com/YasirKhan231"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="w-4 h-4 mr-2" />
-                GitHub
-              </Link>
-            </Button>
+        {/* Contact Form */}
+        <section id="contact-form" className="mb-12">
+          <h2 className="text-xl font-semibold mb-6">Get In Touch</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Contact Info */}
+            <div>
+              <p className="text-gray-300 mb-6">
+                Feel free to reach out to me via email, LinkedIn, or Twitter for
+                any queries, collaboration opportunities, or further details.
+              </p>
+              <div className="flex flex-col gap-4">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300 justify-start"
+                >
+                  <Link
+                    href="https://x.com/yasir_juned"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Twitter className="w-4 h-4 mr-2" />
+                    Twitter
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300 justify-start"
+                >
+                  <Link
+                    href="https://www.linkedin.com/in/yasir-khan-397989234/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    LinkedIn
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300 justify-start"
+                >
+                  <Link href="mailto:yasirkhan0184@gmail.com">
+                    <Mail className="w-4 h-4 mr-2" />
+                    Email
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300 justify-start"
+                >
+                  <Link
+                    href="https://github.com/YasirKhan231"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="w-4 h-4 mr-2" />
+                    GitHub
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <Label htmlFor="name" className="text-white">
+                    Name
+                  </Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="email" className="text-white">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="subject" className="text-white">
+                    Subject
+                  </Label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    required
+                    className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                    placeholder="What's this about?"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="message" className="text-white">
+                    Message
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={4}
+                    className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                    placeholder="Tell me more about your project or inquiry..."
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-white text-black hover:bg-gray-200"
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+                {submitStatus === "success" && (
+                  <p className="text-green-400 text-sm">
+                    Message sent successfully! I'll get back to you soon.
+                  </p>
+                )}
+                {submitStatus === "error" && (
+                  <p className="text-red-400 text-sm">
+                    Failed to send message. Please try again or contact me
+                    directly.
+                  </p>
+                )}
+              </form>
+            </div>
           </div>
         </section>
       </div>
