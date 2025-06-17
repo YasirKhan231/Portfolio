@@ -148,7 +148,9 @@ export default function Portfolio() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formspree.io/f/mgvyzwjq", {
+      if (!process.env.NEXT_PUBLIC_FORMSPREE_URL)
+        throw new Error("Formspree URL is not defined");
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_URL, {
         method: "POST",
         body: formData,
         headers: {
