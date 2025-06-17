@@ -120,7 +120,7 @@ export default function Portfolio() {
       role: "Freelancer",
       timeline: "Mar 2025 - Present",
       description:
-        "Developing the MVP for the founders  and the consumer website whihc help the users to get done their work .",
+        "Developing the MVP for the founders  and the consumer website which help the users to get done their work .",
     },
     {
       id: 3,
