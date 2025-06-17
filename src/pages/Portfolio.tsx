@@ -35,7 +35,7 @@ export default function Portfolio() {
       title: "PrepforLaw",
       description:
         "A comprehensive Bar Exam preparation platform combining subject-wise practice sets, AI-generated explanations, progress tracking, and law-specific analytics.",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/barexam.png",
       technologies: [
         "TailwindCSS",
         "Node.js",
@@ -53,7 +53,7 @@ export default function Portfolio() {
       title: "SmartExpense",
       description:
         "A modern expense tracker that helps users manage daily spending, categorize expenses, visualize insights, and export reports in one click.",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/expense.png",
       technologies: [
         "React.js",
         "TailwindCSS",
@@ -70,7 +70,7 @@ export default function Portfolio() {
       title: "CryptoPlace",
       description:
         "A real-time cryptocurrency tracker that displays top coins, live price charts, historical data .",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/crypto.png",
       technologies: ["React.js", "TailwindCSS", "CoinGecko API", "Recharts"],
       github: "https://github.com/YasirKhan231/Crypto-tracker",
       live: "https://crypto-tracker-tau-eight.vercel.app/",
@@ -142,7 +142,10 @@ export default function Portfolio() {
                 Have an idea, want to collaborate, or have an internship
                 opportunity? Feel free to message me! I'm always excited to
                 connect and work on great projects.{" "}
-                <Link href="#contact" className="underline hover:text-white">
+                <Link
+                  href="mailto:yasirkhan0184@gmail.com"
+                  className="underline hover:text-white"
+                >
                   Contact me
                 </Link>
               </p>
@@ -158,7 +161,7 @@ export default function Portfolio() {
               <Badge
                 key={skill}
                 variant="secondary"
-                className="bg-gray-800 text-gray-300 hover:bg-gray-700 border-gray-700"
+                className="bg-gray-200 text-gray-800 hover:bg-gray-300 border-gray-200"
               >
                 {skill}
               </Badge>
@@ -197,7 +200,7 @@ export default function Portfolio() {
                         <Badge
                           key={tech}
                           variant="secondary"
-                          className="bg-gray-800 text-gray-300 hover:bg-gray-700 border-gray-700 text-xs"
+                          className="bg-gray-200 text-gray-800 hover:bg-gray-300 border-gray-200 text-xs"
                         >
                           {tech}
                         </Badge>
@@ -239,7 +242,7 @@ export default function Portfolio() {
             <Button
               asChild
               variant="outline"
-              className="bg-transparent border-gray-700 text-gray-300 hover:bg-gray-800"
+              className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
             >
               <a
                 href="https://x.com/yasir_juned"
@@ -253,7 +256,7 @@ export default function Portfolio() {
             <Button
               asChild
               variant="outline"
-              className="bg-transparent border-gray-700 text-gray-300 hover:bg-gray-800"
+              className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
             >
               <a
                 href="https://www.linkedin.com/in/yasir-khan-397989234/"
@@ -267,7 +270,7 @@ export default function Portfolio() {
             <Button
               asChild
               variant="outline"
-              className="bg-transparent border-gray-700 text-gray-300 hover:bg-gray-800"
+              className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
             >
               <a href="mailto:yasirkhan0184@gmail.com">
                 <Mail className="w-4 h-4 mr-2" />
@@ -277,7 +280,7 @@ export default function Portfolio() {
             <Button
               asChild
               variant="outline"
-              className="bg-transparent border-gray-700 text-gray-300 hover:bg-gray-800"
+              className="bg-gray-200 border-gray-800 text-gray-800 hover:bg-gray-300"
             >
               <a
                 href="https://github.com/YasirKhan231"
