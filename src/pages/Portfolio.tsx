@@ -70,6 +70,22 @@ export default function Portfolio() {
     },
     {
       id: 2,
+      title: "GitHub Profile README Generator",
+      description:
+        "A tool that helps developers generate professional and personalized GitHub profile READMEs in under 5 minutes. Users can showcase their skills, social links, and GitHub stats effortlessly.",
+      image: "/github-readme.png",
+      technologies: [
+        "Next.js",
+        "TailwindCSS",
+        "Framer Motion",
+        "Shadcn UI",
+        "TypeScript",
+      ],
+      github: "https://github.com/YasirKhan231/Github-profile-readme-generator",
+      live: "https://github-profile-readme-generator-eight.vercel.app/",
+    },
+    {
+      id: 3,
       title: "SmartExpense",
       description:
         "A modern expense tracker that helps users manage daily spending, categorize expenses, visualize insights, and export reports in one click.",
@@ -86,7 +102,7 @@ export default function Portfolio() {
       live: "https://expense-tracker-git-main-yasirkhan231s-projects.vercel.app/",
     },
     {
-      id: 3,
+      id: 4,
       title: "CryptoPlace",
       description:
         "A real-time cryptocurrency tracker that displays top coins, live price charts, historical data .",
