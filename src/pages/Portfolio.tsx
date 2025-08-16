@@ -111,6 +111,31 @@ export default function Portfolio() {
       github: "https://github.com/YasirKhan231/Crypto-tracker",
       live: "https://crypto-tracker-tau-eight.vercel.app/",
     },
+    {
+      id: 5,
+      title: "ShinePro Windows — Landing Page",
+      description:
+        "Conversion-focused landing page for a window cleaning company with booking CTAs, pricing, testimonials, and a service-area map.",
+      image: "/window.png",
+      technologies: [
+        "Next.js",
+        "TailwindCSS",
+        "shadcn/ui",
+        "Leaflet (Map Library)",
+      ],
+      github: "https://github.com/YasirKhan231/window-clining-landing",
+      live: "https://window-clining-landing.vercel.app/",
+    },
+    {
+      id: 6,
+      title: "Figma → Next.js (45+ Pages)",
+      description:
+        "Pixel-perfect conversion of a large Figma design into a production-ready Next.js app with reusable components and typed routes of AI-reputation website.",
+      image: "/ai-reputation.png",
+      technologies: ["Next.js", "TypeScript", "CSS (Vanilla)"],
+      github: "https://github.com/YasirKhan231",
+      live: "https://ai-reputation-psi.vercel.app/",
+    },
   ];
 
   const education = {
@@ -193,7 +218,7 @@ export default function Portfolio() {
       <div className="fixed inset-0 z-0">
         {/* Stars */}
         <div className="absolute inset-0">
-          {[...Array(200)].map((_, i) => (
+          {[...Array(50)].map((_, i) => (
             <div
               key={`star-${i}`}
               className="absolute bg-white rounded-full animate-twinkle"
