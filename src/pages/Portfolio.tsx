@@ -151,7 +151,7 @@ export default function Portfolio() {
       id: 1,
       company: "Startup Bricks",
       role: "Software Engineer Intern",
-      timeline: "Jan 2025 - Present",
+      timeline: "Jan 2025 - july 2025",
       description:
         "Developed web applications using Nextjs ,React and Node.js, implemented REST APIs, and collaborated with cross-functional teams.",
     },
