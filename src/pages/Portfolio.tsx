@@ -53,6 +53,22 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
+      title: "Text Behind Image",
+      description:
+        "An online tool that allows users to overlay and style custom text behind images with high-quality output, suitable for social media, banners, and creative visuals.",
+      image: "/Textbehindimage.png",
+      technologies: [
+        "Next.js",
+        "TailwindCSS",
+        "Node.js",
+        "Shadcn UI",
+        "Convex DB",
+      ],
+      github: "https://github.com/YasirKhan231/",
+      live: "https://www.textbehindimageonline.com/",
+    },
+    {
+      id: 2,
       title: "PrepforLaw",
       description:
         "A comprehensive Bar Exam preparation platform combining subject-wise practice sets, AI-generated explanations, progress tracking, and law-specific analytics.",
@@ -69,7 +85,7 @@ export default function Portfolio() {
       live: "https://lsat-training.vercel.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "GitHub Profile README Generator",
       description:
         "A tool that helps developers generate professional and personalized GitHub profile READMEs in under 5 minutes. Users can showcase their skills, social links, and GitHub stats effortlessly.",
@@ -85,7 +101,7 @@ export default function Portfolio() {
       live: "https://github-profile-readme-generator-eight.vercel.app/",
     },
     {
-      id: 3,
+      id: 4,
       title: "SmartExpense",
       description:
         "A modern expense tracker that helps users manage daily spending, categorize expenses, visualize insights, and export reports in one click.",
@@ -102,7 +118,7 @@ export default function Portfolio() {
       live: "https://expense-tracker-git-main-yasirkhan231s-projects.vercel.app/",
     },
     {
-      id: 4,
+      id: 5,
       title: "CryptoPlace",
       description:
         "A real-time cryptocurrency tracker that displays top coins, live price charts, historical data .",
@@ -112,7 +128,7 @@ export default function Portfolio() {
       live: "https://crypto-tracker-tau-eight.vercel.app/",
     },
     {
-      id: 5,
+      id: 6,
       title: "ShinePro Windows — Landing Page",
       description:
         "Conversion-focused landing page for a window cleaning company with booking CTAs, pricing, testimonials, and a service-area map.",
@@ -127,7 +143,7 @@ export default function Portfolio() {
       live: "https://window-clining-landing.vercel.app/",
     },
     {
-      id: 6,
+      id: 7,
       title: "Figma → Next.js (45+ Pages)",
       description:
         "Pixel-perfect conversion of a large Figma design into a production-ready Next.js app with reusable components and typed routes of AI-reputation website.",
