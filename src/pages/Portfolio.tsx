@@ -298,7 +298,7 @@ export default function Portfolio() {
               <Twitter className="w-5 h-5" />
             </Link>
             <Link
-              href="https://drive.google.com/file/d/1roVvfO0GqokwXcAEL1N_tq1S1aSTVaHu/view?usp=sharing"
+              href="https://drive.google.com/file/d/1U_FdUqWynOQS_R6rmlNM5Zc7M9RvGK77/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -641,3 +641,4 @@ export default function Portfolio() {
     </div>
   );
 }
+
