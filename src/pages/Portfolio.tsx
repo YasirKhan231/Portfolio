@@ -183,7 +183,7 @@ export default function Portfolio() {
     id: 3,
     company: "Upwork & Fiverr",
     role: "Freelancer",
-    timeline: "Mar 2025 - Present",
+    timeline: "Mar 2025 - oct 2025",
     description:
       "Developing the MVP for the founders and the consumer website which help the users to get done their work.",
   },
