@@ -163,39 +163,47 @@ export default function Portfolio() {
   };
 
   const experiences = [
-    {
-      id: 1,
-      company: "Startup Bricks",
-      role: "Software Engineer Intern",
-      timeline: "Jan 2025 - july 2025",
-      description:
-        "Developed web applications using Nextjs ,React and Node.js, implemented REST APIs, and collaborated with cross-functional teams.",
-    },
-    {
-      id: 2,
-      company: "Upwork & Fiver",
-      role: "Freelancer",
-      timeline: "Mar 2025 - Present",
-      description:
-        "Developing the MVP for the founders  and the consumer website which help the users to get done their work .",
-    },
-    {
-      id: 3,
-      company: "GirlScript summer of code ",
-      role: "Contributer",
-      timeline: "Oct 2024 - Nov 2024",
-      description:
-        "Contributing to open source projects, fixing bugs, and implementing new features in JavaScript and TypeScript.",
-    },
-    {
-      id: 4,
-      company: "The skill Guru Foundation",
-      role: "Full stack developer",
-      timeline: "Sep 2024 - Sep 2024",
-      description:
-        "Developed the web products for the foundation in differnt niches , Managging the whole team to make a full software .",
-    },
-  ];
+  {
+    id: 1,
+    company: "Filflo",
+    role: "Software Developer Intern",
+    timeline: "Oct 2024 - Present",
+    description:
+      "Managing product development, implementing new features, debugging production issues, and optimizing application performance for better scalability.",
+  },
+  {
+    id: 2,
+    company: "Startup Bricks",
+    role: "Software Engineer Intern",
+    timeline: "Jan 2025 - July 2025",
+    description:
+      "Developed web applications using Next.js, React and Node.js, implemented REST APIs, and collaborated with cross-functional teams.",
+  },
+  {
+    id: 3,
+    company: "Upwork & Fiverr",
+    role: "Freelancer",
+    timeline: "Mar 2025 - Present",
+    description:
+      "Developing the MVP for the founders and the consumer website which help the users to get done their work.",
+  },
+  {
+    id: 4,
+    company: "GirlScript Summer of Code",
+    role: "Contributor",
+    timeline: "Oct 2024 - Nov 2024",
+    description:
+      "Contributing to open source projects, fixing bugs, and implementing new features in JavaScript and TypeScript.",
+  },
+  {
+    id: 5,
+    company: "The Skill Guru Foundation",
+    role: "Full Stack Developer",
+    timeline: "Sep 2024 - Sep 2024",
+    description:
+      "Developed the web products for the foundation in different niches, managing the whole team to make a full software.",
+  },
+];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
